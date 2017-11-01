@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>F & R</title>
+	<script type="text/javascript">
+		function find(){
+
+		}
+
+		function replace(){
+			var all = document.getElementById("content").innerHTML;
+			var allne = all.replace('is','was');
+			document.getElementById("content").innerHTML=allne; 
+		}
+
+		function replaceAll(){}
+		}
+
+	</script>
+</head>
+<body>
+	<textarea id="content">my name is suraj.</textarea><br/>
+	<input id="find" type="findBox" name="Find: " tid="find: " /><br/>
+	<label>Replace with: </label><input id="replace" type="replaceBox" name="Replace" id="replace" /><br/>
+	<button onclick="find()" id="findBtn">Find</button><br>
+	<button onclick="replace()" id="replaceBtn" >Replace</button><br>
+	<button onclick="replaceAll()" id="replaceAll">Replace all</button>
+
+
+</body>
+</html>

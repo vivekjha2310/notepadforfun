@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Home made Notepad</title>
+		<link rel="stylesheet" type="text/css" href="notepad.css">
+		<script src="jquery-3.2.1.js"></script>
+		<script src="notepad.js"> </script>
+	
+		<script>
+
+			function printDiv(divName) {
+						     var printContents = document.getElementById(divName).innerHTML;
+						     var originalContents = document.body.innerHTML;
+
+						     document.body.innerHTML = printContents;
+
+						     window.print();
+
+						     document.body.innerHTML = originalContents;
+						}
+
+			function newFile(){
+					var newWindow = window.open("notepad.html", "_blank", "width=1000,height=1000");
+						}
+
+			function aboutBox(){
+					alert("Home made Notepad is a notepad designed in fun for all of you over there. \n You can use it as well as play with it as the source code is open to you all. \n So, what are you waiting for just go and explore it!!! ")
+						}
+		
+
+		</script>
+
+	</head>
+
+	<body>
+		<table>
+			<tr id="titleBar"  class="menus">
+				<td colspan="6" id="tHeading">Our Notepad</td>
+				<td style="padding:0px;" id="tBtn"><button class="btn" id="min_btn" />_</td>
+				<td style="padding:0px;" id="tBtn"><button class="btn" id="max_btn" />+</td>
+				<td style="padding:0px;" id="tBtn"><button class="btn" id="cls_btn" />X</td>
+			</tr>
+
+			<tr id="menuBar">
+				<td colspan="9">
+					<div>	
+						<button id="file">File</button>
+						<ul id="fileList">
+							<li><button class="menus" id="new" onclick="newFile()">New</button></li>				
+							<li><button class="menus" id="open">Open</button></li>
+							<li><button class="menus" id="save" onclick="window.save()">Save</button></li>
+							<li><button class="menus" id="saveAs">Save As</button></li>
+							<li><button class="menus" id="print" onclick="printDiv('content')" >Print</button></li>
+							<li><button class="menus" id="exit" onclick="window.close()">Exit</button></li>
+						</ul>
+					</div>
+
+					<div>
+						<button id="insert">Edit</button>
+						<ul id="editList">
+							<li><button class="menus" id="Font" onclick="document.execCommand('')">Cut</button></li>
+							<li><button class="menus" id="copy" onclick="document.execCommand('copy')">Copy</button></li>
+							<li><button class="menus" id="paste">Paste</button></li>
+							<li><button class="menus" id="undo" onclick="document.execCommand('undo')">Undo</button></li>
+							<li><button class="menus" id="redo" onclick="document.execCommand('redo')">Redo</button></li>
+							<li><button class="menus" id="select_all" onclick="document.execCommand('selectAll')">Select All</button></li>
+
+						</ul> 
+					</div>
+
+					<div>
+						<button id="format">Format</button>
+						<ul id="formatList">
+
+							<li><button class="menus" id="wordWrap">Word Wrap</button></li>
+							<li><button class="menus" id="bold" onclick="document.execCommand('bold')"><b>Bold</b></button></li>
+							<li><button class="menus" id="italic" onclick="document.execCommand('italic')"><i>Italic</i></button></li>
+							<li><button class="menus" id="underline" onclick="document.execCommand('underline')"><u>Underline</u></button></li>
+							<li><button class="menus" id="removeFormat" onclick="document.execCommand('removeFormat')">Undo Formatting</button></li>
+							<li><button class="menus" id="ol" onclick="document.execCommand('insertOrderedList')">Ordered List</button></li>
+							<li><button class="menus" id="unL" onclick="document.execCommand('insertUnorderedList')">Unordered List</button></li>
+
+						</ul>
+					</div>
+
+					<div>
+						<button id="view">View</button>
+						<ul id="viewList">
+							<li><button class="menus" id="statusBar">statusbar</button></li>
+						</ul>
+					</div>
+
+					<div>
+						<button id="help">Help</button>
+						<ul id="helpList">
+							<li><button class="menus" id="aboutUs" onclick="aboutBox()">About Us</button></li>
+						</ul>
+					</div>
+				</td>	
+			</tr>
+
+			<tr id="container"  class="menus">
+				<td colspan="9" id="textarea">
+					<div id="content" contentEditable="true" >Notepad For Fun.</div>
+				</td>
+			</tr>
+
+			<footer>
+				
+			</footer>
+		</table>
+	</body>
+</html>
